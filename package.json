@@ -1,0 +1,25 @@
+{
+  "name": "Webpack4Demo",
+  "version": "1.0.0",
+  "description": "See https://webpack.js.org/guides/getting-started/\r npm init -y\r npm install --save-dev webpack",
+  "scripts": {
+    "build": "webpack"
+  },
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikeMundy/Webpack4Demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MikeMundy/Webpack4Demo/issues"
+  },
+  "homepage": "https://github.com/MikeMundy/Webpack4Demo#readme"
+}
