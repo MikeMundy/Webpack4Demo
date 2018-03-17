@@ -40,6 +40,8 @@ See http://jbt.github.io/markdown-editor/ for Github markdown editor.
   - npm install react-hot-loader --save-dev
   - ATS 4 has an issue with Webpack 4, kills hot reloading... had to upgrade ATS to v5.0.0-1 which includes patch
   - npm install awesome-typescript-loader@5.0.0-1 --save-dev
+- Git credential caching was not working, had to run git config --global credential.helper winstore
+
 
 
 
