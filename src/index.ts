@@ -1,4 +1,6 @@
 import * as _ from "lodash";
+import "./index.css";
+import "./index.scss";
 
 // const x = 10;
 // alert('Hi from Typescript!!!!');

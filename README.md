@@ -42,13 +42,25 @@ See http://jbt.github.io/markdown-editor/ for Github markdown editor.
   - npm install awesome-typescript-loader@5.0.0-1 --save-dev
 - Git credential caching was not working, had to run git config --global credential.helper winstore
   - Had to install Git For Windows
+- Add CSS loading
+  - Add modules, rules for CSS
+  - npm install style-loader css-loader --save-dev 
+  - Also want to support splitting the CSS into its own file via extract-text-webpack-plugin
+  - npm install extract-text-webpack-plugin --save-dev 
+  - extract-text-webpack-plugin is not currently working with webpack 4... https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/701 
+  suggests using mini-css-extract-plugin
+  - npm install mini-css-extract-plugin --save-dev 
+- Add SCSS loading:
+  - Add rules, module for SCSS
+  - npm install sass-loader --save-dev
+  - npm install node-sass --save-dev
   
 
 ## Things to do
 - Continue through webpack sections at https://webpack.js.org/guides/
-  - Assets: SCSS / CSS, files, font, data (xml)
+  - Assets: SCSS / CSS (DONE), files, font, data (xml)
   - TSLinting
-  - Development: hot module replacement with style-loader etc.
+  - Development: hot module replacement (DONR) with style-loader (DONE) etc.
   - Tree shaking, minification
   - Production setup
   - Code splitting
@@ -72,6 +84,7 @@ See http://jbt.github.io/markdown-editor/ for Github markdown editor.
   - Accessibility
   - Internationalisation
   - After March, downgrade awesome-typescript-loader to v4.0.0 and see if still works. (had to upgrade to 5.0.0-1 to patch hot reload bug with webpack 4)
+  - After March, check if can eliminate mini-css-extract-plugin... may be natively supported by webpack 4 by then
 
 ## Things Done
 - Continue through webpack sections at https://webpack.js.org/guides/

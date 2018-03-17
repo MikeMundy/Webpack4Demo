@@ -2,6 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
+// const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     mode: "development",
@@ -14,7 +16,12 @@ module.exports = {
         new CleanWebpackPlugin(['../dist'], { allowExternal: true }),
         new HtmlWebpackPlugin({ title: 'Webpack 4 Demo' }),
         new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        // new ExtractTextPlugin("styles.css"),
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+            chunkFilename: "[id].css"
+        }),
+        new webpack.HotModuleReplacementPlugin(),
     ],
     module: {
         rules: [
@@ -31,6 +38,35 @@ module.exports = {
                     },
                     'awesome-typescript-loader',
                 ],
+            },
+            // {
+            //     test: /\.css$/,
+            //     use: ExtractTextPlugin.extract({
+            //         fallback: "style-loader",
+            //         use: "css-loader"
+            //     })
+            // }
+            // {
+            //     test: /\.css$/,
+            //     use: [MiniCssExtractPlugin.loader, "css-loader"]
+            // },
+            // {
+            //     test: /\.scss$/,
+            //     use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+            // },
+            {
+                test: /\.(scss|css)$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader",
+                        options: { minimize: { safe: true } }
+                    },
+                    {
+                        loader: "sass-loader",
+                        options: {}
+                    }
+                ]
             },
         ]
     },
