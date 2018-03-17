@@ -33,11 +33,20 @@ See http://jbt.github.io/markdown-editor/ for Github markdown editor.
   - Add rules and resolve for .tsx to webpack config
   - Add index.ts and swap entry point to point to it
   - Works, but ts-loader is really slow... should swap to awesome-typescript-loader...
+- Added awesome-typescript-loader (ATS) for faster TS compilation
+  - npm install awesome-typescript-loader --save-dev  
+  - Set module loader to use awesome-typescript-loader, which requires babel
+  - npm install babel-loader --save-dev
+  - npm install react-hot-loader --save-dev
+  - ATS 4 has an issue with Webpack 4, kills hot reloading... had to upgrade ATS to v5.0.0-1 which includes patch
+  - npm install awesome-typescript-loader@5.0.0-1 --save-dev
+
+
 
 ## Things to do
 - Continue through webpack sections at https://webpack.js.org/guides/
-  - TypeScript (DONE... but need to upgrade to awesome-typescript-loader because ts-loader is slow)
   - Assets: SCSS / CSS, files, font, data (xml)
+  - TSLinting
   - Development: hot module replacement with style-loader etc.
   - Tree shaking, minification
   - Production setup
@@ -47,6 +56,7 @@ See http://jbt.github.io/markdown-editor/ for Github markdown editor.
  - Progressive web app - runs offline
 - Other Stuff (aside from Wedbpack):
   - React
+    - This includes compiling .tsx... see wepack config, modules, rules, .ts, uncomment // plugins: ['react-hot-loader/babel'], 
   - React-Router
   - Redux
   - Maybe a UI library like Bootstrap or react-semantic-ui?
@@ -57,8 +67,13 @@ See http://jbt.github.io/markdown-editor/ for Github markdown editor.
   - Hosting
   - Actual character generator
     - Include a version field in data so can upgrade saved characters as versions change.
+  - Tests
+  - Accessibility
+  - Internationalisation
+  - After March, downgrade awesome-typescript-loader to v4.0.0 and see if still works. (had to upgrade to 5.0.0-1 to patch hot reload bug with webpack 4)
 
 ## Things Done
 - Continue through webpack sections at https://webpack.js.org/guides/
   - Output: HtmlWebpackPlugin to create bundles for endpoints (without fixed names) (DONE), clean-webpack-plugin (DONE)
   - Development: source maps (DONE for dev), watch mode with webpack-dev-server (DONE), hot module replacement (DONE) 
+  - TypeScript (DONE... but need to upgrade to awesome-typescript-loader because ts-loader is slow)

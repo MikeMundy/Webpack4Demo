@@ -8,7 +8,7 @@ module.exports = {
     devtool: "inline-source-map",
     entry: './src/index.ts',
     resolve: {
-        extensions: ['.ts', '.tsx', '.js']
+        extensions: ['.ts', '.tsx', '.js', '.jsx']
     },
     plugins: [
         new CleanWebpackPlugin(['../dist'], { allowExternal: true }),
@@ -19,10 +19,19 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/
-            }
+                test: /\.ts?$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            babelrc: true,
+                            // plugins: ['react-hot-loader/babel'],
+                        },
+                    },
+                    'awesome-typescript-loader',
+                ],
+            },
         ]
     },
     output: {
