@@ -1,3 +1,15 @@
-body {
-    background: red;
+@font-face {
+   font-family: Pacifico;
+   src: url('./Pacifico.ttf');
+   font-weight: 600;
+   font-style: normal;
+ }
+ 
+ body {
+    background: url('./sample.png');
+}
+
+div {
+    background-color: red;
+    font-family: Pacifico;
 }

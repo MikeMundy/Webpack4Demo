@@ -68,6 +68,28 @@ module.exports = {
                     }
                 ]
             },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: ['file-loader']
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: [
+                    'file-loader'
+                ]
+            },
+            {
+                test: /\.csv$/,
+                loader: 'csv-loader',
+                options: {
+                    dynamicTyping: true,
+                    header: true,
+                    skipEmptyLines: true
+                }
+            },
+            {
+                test: /\.xml$/, use: ['xml-loader']
+            }
         ]
     },
     output: {

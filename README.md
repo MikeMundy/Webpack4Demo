@@ -54,19 +54,31 @@ See http://jbt.github.io/markdown-editor/ for Github markdown editor.
   - Add rules, module for SCSS
   - npm install sass-loader --save-dev
   - npm install node-sass --save-dev
+- Add image file loading:
+  - npm install file-loader --save-dev 
+  - add rules, module for file-loader for jpg, gif, png.
+  - import image on entry page (just as import "./filename.gif")
+- Add fony file loading:
+  - Also uses file-loader
+  - Add rules, module for file-loader for various font typescript
+  - Add @font-face to scss or css file.
+- Add loading XML and CSV data (JSON data is supported natively)
+  - npm install csv-loader xml-loader --save-dev 
+  - Add rules, module for loaders for .csv and .xml file typescript
+  - Had to add a typings.d.ts file with a wildcare definition for xml and csv module types.
+  - Then just import * as dogs from "./dogs.xml"
   
 
 ## Things to do
 - Continue through webpack sections at https://webpack.js.org/guides/
-  - Assets: SCSS / CSS (DONE), files, font, data (xml)
   - TSLinting
-  - Development: hot module replacement (DONR) with style-loader (DONE) etc.
+  - Development: hot module replacement (DONE) with style-loader (DONE) etc.
   - Tree shaking, minification
   - Production setup
   - Code splitting
   - Lazy loading
   - Caching, cache busting, etc.
- - Progressive web app - runs offline
+  - Progressive web app - runs offline
 - Other Stuff (aside from Wedbpack):
   - React
     - This includes compiling .tsx... see wepack config, modules, rules, .ts, uncomment // plugins: ['react-hot-loader/babel'], 
@@ -81,6 +93,7 @@ See http://jbt.github.io/markdown-editor/ for Github markdown editor.
   - Actual character generator
     - Include a version field in data so can upgrade saved characters as versions change.
   - Tests
+  - Server-side rendering?
   - Accessibility
   - Internationalisation
   - After March, downgrade awesome-typescript-loader to v4.0.0 and see if still works. (had to upgrade to 5.0.0-1 to patch hot reload bug with webpack 4)
@@ -91,3 +104,5 @@ See http://jbt.github.io/markdown-editor/ for Github markdown editor.
   - Output: HtmlWebpackPlugin to create bundles for endpoints (without fixed names) (DONE), clean-webpack-plugin (DONE)
   - Development: source maps (DONE for dev), watch mode with webpack-dev-server (DONE), hot module replacement (DONE) 
   - TypeScript (DONE... but need to upgrade to awesome-typescript-loader because ts-loader is slow)
+  - Assets: SCSS / CSS (DONE), files/images (DONE), fonts (DONE), data (xml and csv) (DONE)
+
