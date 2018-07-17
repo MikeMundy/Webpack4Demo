@@ -5,6 +5,11 @@ import "./sample.png";
 import * as dogs from "./dogs.xml";
 import * as cats from "./cats.csv";
 
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+
+import { Hello } from "./Hello";
+
 // const x = 10;
 // alert('Hi from Typescript!!!!');
 
@@ -29,3 +34,11 @@ function component() {
 document.body.appendChild(component());
 
 console.log(dogs);
+
+var reactElement = document.createElement('div');
+document.body.appendChild(reactElement);
+
+ReactDOM.render(
+    <Hello compiler="TypeScript" framework="React!!" />,
+    reactElement
+);

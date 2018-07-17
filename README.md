@@ -67,7 +67,14 @@ See http://jbt.github.io/markdown-editor/ for Github markdown editor.
   - Add rules, module for loaders for .csv and .xml file typescript
   - Had to add a typings.d.ts file with a wildcare definition for xml and csv module types.
   - Then just import * as dogs from "./dogs.xml"
-  
+- Add React
+  - As per https://www.typescriptlang.org/docs/handbook/react-&-webpack.html
+  - npm install --save react react-dom @types/react @types/react-dom
+  - npm install --save-dev source-map-loader
+  - Update tsconfig.json with react and sourcemap settings
+  - Add src/Hello.tsx
+  - import Hello component in index.tsx
+
 
 ## Things to do
 - Continue through webpack sections at https://webpack.js.org/guides/
