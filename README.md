@@ -74,6 +74,29 @@ See http://jbt.github.io/markdown-editor/ for Github markdown editor.
   - Update tsconfig.json with react and sourcemap settings
   - Add src/Hello.tsx
   - import Hello component in index.tsx
+- Add Redux
+  - This turned into a mess as I tried to get the latest versions of redux, react-redux, redux-thunk, etc. to 
+  all play together nicely, and to get clean, simple code as a result. For example, the latest Typescript definitions
+  for react-redux seem to be a) really unnecessarily complex, and b) are not compatible with react-thunk.
+  - Plus, I just want the simplest possible setup for redux, without action creator libraries or side effect handlers 
+  like redux-think (whch I'd like to replace with react-saga).
+  - I'd also like to try ducks setup for redux, where you keep all the code for each module in one file (instead of 
+  scattered acroos a bunch of different reducer, action, component, etc. folders).
+  - So, back to the start... uninstalling redux, react-redux, redux-immutable-state-invariant, redux-thunk, 
+  typescript-fsa.
+  - I'm going to begin with aiming for something similar to this React+Saga setup: https://ohyayanotherblog.ghost.io/redux-saga-clock/, with 
+  demo code at https://github.com/granmoe/redux-saga-clock-tutorial 
+  - Initially, I just want a simple redux-only stopwatch app... no action creator libraries, no side-effect handlers.
+  I'll add them in in subsequent commits. 
+ - See https://github.com/rokoroku/react-redux-typescript-boilerplate for minimal setup... even this turned out to be 
+ a mess. 
+ - In the end I just put together a very basic Redux setup that just keeps an array of Widget objects in state, and allows you to 
+add new widgets.
+
+  
+
+
+
 
 
 ## Things to do
@@ -91,6 +114,8 @@ See http://jbt.github.io/markdown-editor/ for Github markdown editor.
     - This includes compiling .tsx... see wepack config, modules, rules, .ts, uncomment // plugins: ['react-hot-loader/babel'], 
   - React-Router
   - Redux
+  - Redux Dev Tools
+  - Saga (rather than thunks) for side effects
   - Maybe a UI library like Bootstrap or react-semantic-ui?
   - Authentication and Authorization... support Facebook login? React-router + Auth0
   - https
