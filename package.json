@@ -7,15 +7,10 @@
     "start": "webpack-dev-server --open --config webpack/webpack.dev.config.js"
   },
   "main": "index.js",
-  "dependencies": {
-    "@types/react": "^16.4.6",
-    "@types/react-dom": "^16.0.6",
-    "lodash": "^4.17.5",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1"
-  },
   "devDependencies": {
     "@types/lodash": "^4.14.105",
+    "@types/react-redux": "6.0.2",
+    "@types/redux-actions": "2.3.0",
     "awesome-typescript-loader": "^5.0.0-1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
@@ -27,16 +22,27 @@
     "html-webpack-plugin": "^3.0.6",
     "mini-css-extract-plugin": "^0.2.0",
     "node-sass": "^4.9.2",
-    "react-hot-loader": "^4.0.0",
+    "react-hot-loader": "^4.3.1",
+    "redux": "^4.0.0",
     "sass-loader": "^6.0.7",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.20.3",
     "ts-loader": "^4.0.1",
-    "typescript": "^2.7.2",
-    "webpack": "^4.16.1",
-    "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4",
+    "typescript": "^2.9.1",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1",
     "xml-loader": "^1.2.1"
+  },
+  "dependencies": {
+    "@types/react-dom": "^16.0.6",
+    "lodash": "^4.17.5",
+    "react": "^16.2.0",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.4.0",
+    "redux-devtools-extension": "^2.13.5"
   },
   "repository": {
     "type": "git",
