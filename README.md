@@ -92,6 +92,14 @@ See http://jbt.github.io/markdown-editor/ for Github markdown editor.
  a mess. 
  - In the end I just put together a very basic Redux setup that just keeps an array of Widget objects in state, and allows you to 
 add new widgets.
+- Add React-Router
+  - npm install react-router-dom --save
+  - npm install @types-react @types-react-router-dom --save-dev
+  - Added publicPath and historyApiFallback to webpack.config. This is so if you request a route like
+  localhost:8080/thief, the request is redirected to the default page, so the JS can load then deal 
+  with the routing on the clientside.
+  - Wrapped example RouterExample in <BrowserRouter>
+  - Created /RoutingExample
 
   
 

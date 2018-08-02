@@ -7,32 +7,46 @@ export interface IWidgetProps {
     createWidget: (widget: IWidget) => any;
 }
 
-export const WidgetList = (props: IWidgetProps) => {
+export class WidgetList extends React.Component<IWidgetProps, any> {
 
-    const createWidget = () => {
-        const d = new Date();
-        const id = d.getTime();
-        let newWidget: IWidget = { id, name: "A Widget" };
-        props.createWidget(newWidget)
+    public constructor(props: any, context: any) {
+        super(props, context);
+        this.state = {
+            name: "My Widget",
+        }
     }
 
-    // const listItems = props.widgets.map((w: IWidget) => {
-    //     return (<li key={w.id}>{w.id}: {w.name}</li>);
-    // });
+    public render() {
 
-    // const listItems = props.widgets.map<IWidget>(w => <li key={w.id}>{w.name}</li>) ;
+        const createWidget = () => {
+            let newWidget: IWidget = { id: 0, name: this.state.name };
+            this.props.createWidget(newWidget)
+        }
 
-    const items: JSX.Element[] = [];
-    for(const w of props.widgets) {
-        items.push(<li key={w.id}>{w.id}: {w.name}</li>)
+        const items: JSX.Element[] = [];
+        for (const w of this.props.widgets) {
+            items.push(<li key={w.id}>{w.id}: {w.name}</li>)
+        }
+
+        const onNameChange = (e: any): void => {
+            const name = e.target.value;
+            this.setState({ name });
+        }
+
+        return (
+            <React.Fragment>
+                <div>
+                    <input type="text" value={this.state.name} onChange={onNameChange} />
+                    <button onClick={createWidget}>Create Widget</button>
+                </div>
+                <div>
+                    <ul>
+                        {items}
+                    </ul>
+                </div>
+            </React.Fragment>
+        );
     }
 
-    return (
-        <React.Fragment>
-            <ul>
-                {items}
-            </ul>
-            <button onClick={createWidget}>Create Widget</button>
-        </React.Fragment>
-    );
+
 }

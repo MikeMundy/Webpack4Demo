@@ -21,14 +21,16 @@ export default reducer = (state: IState = defaultState, action: AnyAction): ISta
   switch (action.type) {
     // do reducer stuff
     case CREATE: {
-      const newWidgets = [...state.widgets];
-      newWidgets.push(action.widget);
-      const newState: IState = { ...state, widgets: newWidgets };
-      return newState;
-  }
+      const newWidget: IWidget = action.widget;
+      newWidget.id = getMaxId(state.widgets) + 1;
+      return { ...state, widgets: [...state.widgets, newWidget] };
+    }
     default: return state;
+  }
 }
-}
+
+// Selectors
+const getMaxId = (widgets: IWidget[]): number => { return widgets.length };
 
 
 
