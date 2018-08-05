@@ -88,9 +88,9 @@ See http://jbt.github.io/markdown-editor/ for Github markdown editor.
   demo code at https://github.com/granmoe/redux-saga-clock-tutorial 
   - Initially, I just want a simple redux-only stopwatch app... no action creator libraries, no side-effect handlers.
   I'll add them in in subsequent commits. 
- - See https://github.com/rokoroku/react-redux-typescript-boilerplate for minimal setup... even this turned out to be 
+  - See https://github.com/rokoroku/react-redux-typescript-boilerplate for minimal setup... even this turned out to be 
  a mess. 
- - In the end I just put together a very basic Redux setup that just keeps an array of Widget objects in state, and allows you to 
+  - In the end I just put together a very basic Redux setup that just keeps an array of Widget objects in state, and allows you to 
 add new widgets.
 - Add React-Router
   - npm install react-router-dom --save
@@ -100,6 +100,8 @@ add new widgets.
   with the routing on the clientside.
   - Wrapped example RouterExample in <BrowserRouter>
   - Created /RoutingExample
+- Next up ... add Routing with Redux
+
 
   
 

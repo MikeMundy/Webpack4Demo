@@ -9,14 +9,19 @@ import { WidgetProvider } from "./widget/widgetProvider";
 
 import { RoutingExample } from "./routing/RoutingExample";
 
+import { CharGenChecklist } from "./SWN/CharGenChecklist";
+
 var reactElement = document.createElement('div');
 document.body.appendChild(reactElement);
 
 ReactDOM.render(
     <div>
-        <WidgetProvider />
         <BrowserRouter>
-            <RoutingExample title="Character Classes" />
+            <React.Fragment>
+                <WidgetProvider />
+                <RoutingExample title="Character Classes" />
+                <CharGenChecklist/>
+            </React.Fragment>
         </BrowserRouter>
     </div>,
     reactElement
