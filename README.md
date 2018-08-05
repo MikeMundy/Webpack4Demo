@@ -100,7 +100,18 @@ add new widgets.
   with the routing on the clientside.
   - Wrapped example RouterExample in <BrowserRouter>
   - Created /RoutingExample
-- Next up ... add Routing with Redux
+- Testing with Jest
+  - Recommendations from https://medium.com/welldone-software/an-overview-of-javascript-testing-in-2018-f68950900bc3
+  - Jest is a FB library used by FB for testing React
+  - Jest site at https://jestjs.io/
+  - Use ts-jest for integration with TypeScript
+  - npm install --save-dev jest ts-jest @types/jest
+  - Add jest section to package.json.
+  - Add /jestTest
+  - Add "test" script to package.son scripts section
+  - npm test
+  - Recent bug in jest... Security Exception regards localStorage.. add testUrl to jest section in package.config
+  - Fix issue with invalid tsconfig.json. Now working using .ts tests. 
 
 
   
