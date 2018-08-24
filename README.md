@@ -112,11 +112,20 @@ add new widgets.
   - npm test
   - Recent bug in jest... Security Exception regards localStorage.. add testUrl to jest section in package.config
   - Fix issue with invalid tsconfig.json. Now working using .ts tests. 
-
-
-  
-
-
+- Going to start looking at FeatherJS for REST/Sockets/Authentication.
+  - See C:\Users\MikeMundy\Documents\VIsual Studio Code\2018\FeathersJS_01 
+  - Going to try installing a feathers app over the existing code using the generator
+  - npm install @feathersjs/cli -g
+  - feathers generate app
+  - Get conflict as it will overwrite package.json... ynaxdH , H = help
+  - I'll let it do the overwrite, then use source control to add back in the stuff that was lost
+  - feathers generate app
+  - It overwrote package.json, .gitignore, .readme.md
+  - Manually integrated changes to package.json, .gitignore and readme
+  - Still works with npm start
+  - Feathers app works with npm run start_feathers
+  - But now have two different hosting/test-runner setups. 
+  - Feathers tests run via npm run test_feathers
 
 
 
@@ -131,13 +140,14 @@ add new widgets.
   - Caching, cache busting, etc.
   - Progressive web app - runs offline
 - Other Stuff (aside from Wedbpack):
-  - React
+  - React (DONE)
     - This includes compiling .tsx... see wepack config, modules, rules, .ts, uncomment // plugins: ['react-hot-loader/babel'], 
-  - React-Router
-  - Redux
-  - Redux Dev Tools
+  - React-Router (DONE)
+  - Redux (DONE)
+  - Redux Dev Tools (DONE)
+  - Enzyme for testing React components (to work alongside Jest)
   - Saga (rather than thunks) for side effects
-  - Maybe a UI library like Bootstrap or react-semantic-ui?
+  - Maybe a UI library like Bootstrap or react-semantic-ui? Probably Material-UI.
   - Authentication and Authorization... support Facebook login? React-router + Auth0
   - https
   - Backend JSON storage like Cloudfire
@@ -158,4 +168,37 @@ add new widgets.
   - Development: source maps (DONE for dev), watch mode with webpack-dev-server (DONE), hot module replacement (DONE) 
   - TypeScript (DONE... but need to upgrade to awesome-typescript-loader because ts-loader is slow)
   - Assets: SCSS / CSS (DONE), files/images (DONE), fonts (DONE), data (xml and csv) (DONE)
+
+## Feathers readme
+
+Simply run `npm test` and all your tests in the `test/` directory will be run.
+
+## Scaffolding
+
+Feathers has a powerful command line interface. Here are a few things it can do:
+
+```
+$ npm install -g @feathersjs/cli          # Install Feathers CLI
+
+$ feathers generate service               # Generate a new Service
+$ feathers generate hook                  # Generate a new Hook
+$ feathers generate model                 # Generate a new Model
+$ feathers help                           # Show all commands
+```
+
+## Help
+
+For more information on all the things you can do with Feathers visit [docs.feathersjs.com](http://docs.feathersjs.com).
+
+## Changelog
+
+__0.1.0__
+
+- Initial release
+
+## License
+
+Copyright (c) 2018
+
+Licensed under the [MIT license](LICENSE).
 
