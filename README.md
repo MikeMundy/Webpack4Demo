@@ -58,7 +58,7 @@ See http://jbt.github.io/markdown-editor/ for Github markdown editor.
   - npm install file-loader --save-dev 
   - add rules, module for file-loader for jpg, gif, png.
   - import image on entry page (just as import "./filename.gif")
-- Add fony file loading:
+- Add font file loading:
   - Also uses file-loader
   - Add rules, module for file-loader for various font typescript
   - Add @font-face to scss or css file.
@@ -79,7 +79,7 @@ See http://jbt.github.io/markdown-editor/ for Github markdown editor.
   all play together nicely, and to get clean, simple code as a result. For example, the latest Typescript definitions
   for react-redux seem to be a) really unnecessarily complex, and b) are not compatible with react-thunk.
   - Plus, I just want the simplest possible setup for redux, without action creator libraries or side effect handlers 
-  like redux-think (whch I'd like to replace with react-saga).
+  like redux-thunk (whch I'd like to replace with react-saga).
   - I'd also like to try ducks setup for redux, where you keep all the code for each module in one file (instead of 
   scattered acroos a bunch of different reducer, action, component, etc. folders).
   - So, back to the start... uninstalling redux, react-redux, redux-immutable-state-invariant, redux-thunk, 
@@ -126,7 +126,26 @@ add new widgets.
   - Feathers app works with npm run start_feathers
   - But now have two different hosting/test-runner setups. 
   - Feathers tests run via npm run test_feathers
-
+  - So... I'm now using FeathersJS to scaffold my app, and I can use its generators to add services/hooks/etc. 
+  However, it uses a different host/test setup, and obviously it generates code written in JS, not in TS. Can 
+  I just swich JS to TS and have it work ok? Will TS play nicely?
+  - Another option would be to re-do this process, starting with Feathers and layering on top of that. 
+  - I'll add in the rest of the feathers tutorial, then backtrack. 
+  - feathers generate service
+  - feathers generate authentication
+  - add authenticate hook to src/services/messages/messages.hooks.js
+  - feathers generate hook (for process-message)
+  - Add authentication code to src/hooks/process-message.js
+  - feathers generate hook (for gravatar)
+  - Add code to src/hooks/gravatar.js
+  - feathers generate hook (for populate-user)  
+  - Add code for src/hooks/populate-user.js
+  - Update public/index.html
+  - Add app.js and add code
+  - Bingo, working chat app; npm run start_feathers, http://localhost:3030
+  - Question is... is it worth committing to using feathers generators? They use ES6 and generate Mocha tests... is it better to abandon using
+  the generators, manually switch the code over to TypeScript, and create future services/hooks by hand?
+  - ... Right, what I'm gonna do is create a little React+Redux front end page with a login UI, and drag the feathers stuff into that. 
 
 
 ## Things to do
