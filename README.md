@@ -145,7 +145,23 @@ add new widgets.
   - Bingo, working chat app; npm run start_feathers, http://localhost:3030
   - Question is... is it worth committing to using feathers generators? They use ES6 and generate Mocha tests... is it better to abandon using
   the generators, manually switch the code over to TypeScript, and create future services/hooks by hand?
-  - ... Right, what I'm gonna do is create a little React+Redux front end page with a login UI, and drag the feathers stuff into that. 
+  - ... Right, what I'm gonna do is create a little React+Redux front end page with a login UI, and drag the feathers stuff into that.  
+  - Created a couple of Login and Registration components inside the app component. Probably should seperate them into a user admin component
+   with it's own redux connection. 
+  - Nearly working... issue with nested containers. 
+
+
+
+
+- But first I'm adding in internationalization
+  - Options: https://phraseapp.com/blog/posts/react-i18n-best-libraries/ 
+  - I'll try React-Intl. Supported by Yahoo.
+  - npm install react-intl --save
+  - Come back to that... app structure is a mess, need to arrange routing, redux provider properly first
+- Redux + Routing:
+  - https://redux.js.org/advanced/usagewithreactrouter
+  - 
+
 
 
 ## Things to do

@@ -5,10 +5,12 @@ const webpack = require('webpack');
 // const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const isHot = true; // path.basename(require.main.filename) === 'webpack-dev-server.js';
+
 module.exports = {
     mode: "development",
     devtool: "inline-source-map",
-    entry: './src/index.tsx',
+    entry: './src/index02.tsx',
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx']
     },
@@ -18,8 +20,11 @@ module.exports = {
         new webpack.NamedModulesPlugin(),
         // new ExtractTextPlugin("styles.css"),
         new MiniCssExtractPlugin({
-            filename: "[name].css",
-            chunkFilename: "[id].css"
+            filename: 'css/[name].[contenthash].css',
+            //filename: isHot ? 'css/[name].css' : 'css/[name].[contenthash].css',
+            chunkFilename: 'css/[id].css'
+            // filename: "[name].css",
+            // chunkFilename: "[id].css"
         }),
         new webpack.HotModuleReplacementPlugin(),
     ],
@@ -57,6 +62,7 @@ module.exports = {
             {
                 test: /\.(scss|css)$/,
                 use: [
+                    'css-hot-loader',
                     MiniCssExtractPlugin.loader,
                     {
                         loader: "css-loader",
