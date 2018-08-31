@@ -6,7 +6,7 @@ export interface IState {
 
 export const defaultState: IState = {
     user: {
-        userName: "Default Username",
+        userName: "",
         isLoggedIn: false,
     }
 }

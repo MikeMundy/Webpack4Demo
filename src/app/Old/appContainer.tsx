@@ -1,14 +1,14 @@
 import * as React from "react";
 import { connect } from "react-redux";
 
-import { IState } from "./state";
+import { IState } from "../state";
 // import { IUser } from "./user";
 
 // import { updateUserAction } from "./appDuck";
 
-import { App } from "./app";
+import { App } from "../app";
 
-import { LoginContainer } from "./userManagement/loginContainer";
+import { LoginContainer } from "../userManagement/loginContainer";
 
 // export interface IWidgetContainerProps {
 //     widgets: IWidget[],

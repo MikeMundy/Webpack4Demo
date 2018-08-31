@@ -3,11 +3,9 @@ import { connect } from "react-redux";
 
 import { IState } from "../state";
 
-import { authenticateUserAction } from "../appDuck";
+import { UserDetails } from "./UserDetails";
 
-import { Login } from "./Login";
-
-export class LoginContainer extends React.Component<any, any> {
+export class UserDetailsContainer extends React.Component<any, any> {
 
     public constructor(props: any, context: any) {
         super(props, context);
@@ -15,22 +13,20 @@ export class LoginContainer extends React.Component<any, any> {
 
     public render() {
         return (
-            <Login authenticateUser={this.props.authenticateUser} />
+            <UserDetails user={this.props.user} />
         );
     }
 
 }
 
 const mapStateToProps = (state: IState, ownProps: any) => { // 'state' is the state in our Redux Store; 'ownProps' is a reference to this component's own this.props.
-    return {};
-};
-
-const mapDispatchToProps = (dispatch: any, ownProps: any) => {
     return {
-        authenticateUser: (userName: string, password: string) => {
-            dispatch(authenticateUserAction(userName, password));
-        },
+        user: state.user,
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);
+const mapDispatchToProps = (dispatch: any, ownProps: any) => {
+    return {};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserDetailsContainer);

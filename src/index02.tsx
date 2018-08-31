@@ -13,9 +13,7 @@ document.body.appendChild(reactElement);
 ReactDOM.render(
     <div>
         <BrowserRouter>
-            <React.Fragment>
-                <AppProvider />
-            </React.Fragment>
+            <AppProvider />
         </BrowserRouter>
     </div>,
     reactElement

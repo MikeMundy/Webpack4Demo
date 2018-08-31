@@ -22,9 +22,7 @@ export class RegisterContainer extends React.Component<any, any> {
 }
 
 const mapStateToProps = (state: IState, ownProps: any) => { // 'state' is the state in our Redux Store; 'ownProps' is a reference to this component's own this.props.
-    return {
-        //user: state.user,
-    };
+    return {};
 };
 
 const mapDispatchToProps = (dispatch: any) => {

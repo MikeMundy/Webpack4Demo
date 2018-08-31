@@ -31,9 +31,6 @@ export default reducer = (state: IState = defaultState, action: AnyAction): ISta
   switch (action.type) {
 
     case USER_UPDATE: {
-      // const newWidget: IWidget = action.widget;
-      // newWidget.id = getMaxId(state.widgets) + 1;
-      // return { ...state, widgets: [...state.widgets, newWidget] };
       const user: IUser = action.user;
       return { ...state, user };
     }
@@ -61,8 +58,6 @@ export default reducer = (state: IState = defaultState, action: AnyAction): ISta
 
 // Selectors
 // const getMaxId = (widgets: IWidget[]): number => { return widgets.length };
-
-
 
 // // side effects, only as applicable
 // // e.g. thunks, epics, etc

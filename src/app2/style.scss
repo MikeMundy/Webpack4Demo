@@ -1,0 +1,54 @@
+body,
+div,
+label,
+button,
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Helvetica"
+}
+
+h1, h2 {
+    font-family: "Impact"
+}
+
+button {
+    padding: 5px 10px;
+    border-radius: 5px; // box-shadow: 1px 1px lightgray;
+    font-weight: bold;
+}
+
+input {
+    padding: 3px;
+    border: 1px solid lightgray;
+    width: 200px;
+}
+
+button:disabled {
+    opacity: 0.5;
+}
+
+fieldset {
+    display: inline;
+    padding: 20px;
+    border: 1px solid lightgray;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px lightgray;
+}
+
+.myForm {
+    div {
+        margin: 0px 0px 10px 0px;
+    }
+    div:last-child {
+        margin-bottom: 0px;
+    }
+    label {
+        display: inline-block;
+        width: 100px;
+        font-weight: bold;
+    }
+}

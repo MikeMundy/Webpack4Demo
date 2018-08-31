@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 
 import configureStore from "./store";
 
-import { App } from "./App";
+import { App } from "./app";
 
 export class AppProvider extends React.Component<any, any> {
 
