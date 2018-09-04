@@ -1,6 +1,8 @@
 import * as React from "react";
+import { Redirect } from "react-router-dom";
 
 export interface ILoginProps {
+    isLoggedIn: boolean;
     authenticateUser: (username: string, password: string) => any;
 }
 
@@ -22,6 +24,10 @@ export class Login extends React.Component<ILoginProps, ILoginState> {
 
     public render() {
 
+        if (this.props.isLoggedIn) {
+            return <Redirect to="UserDetails" />;
+        }
+
         const onChangeUsername = (e: any): void => {
             const userName = e.target.value;
             this.setState({ userName });
@@ -32,7 +38,7 @@ export class Login extends React.Component<ILoginProps, ILoginState> {
             this.setState({ password });
         }
 
-        const onLogin = (e: any): void => {
+        const onLogin = (e: any): any => {
             e.preventDefault();
             this.props.authenticateUser(this.state.userName, this.state.password);
         }

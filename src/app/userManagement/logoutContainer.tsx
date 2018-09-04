@@ -4,11 +4,11 @@ import { withRouter } from "react-router-dom";
 
 import { IState } from "../state";
 
-import { authenticateUserAction } from "../appDuck";
+import { logoutUserAction } from "../appDuck";
 
-import { Login } from "./Login";
+import { Logout } from "./Logout";
 
-class LoginContainer extends React.Component<any, any> {
+class LogoutContainer extends React.Component<any, any> {
 
     public constructor(props: any, context: any) {
         super(props, context);
@@ -16,7 +16,7 @@ class LoginContainer extends React.Component<any, any> {
 
     public render() {
         return (
-            <Login isLoggedIn={this.props.isLoggedIn} authenticateUser={this.props.authenticateUser} />
+            <Logout logoutUser={this.props.logoutUser} />
         );
     }
 
@@ -24,16 +24,15 @@ class LoginContainer extends React.Component<any, any> {
 
 const mapStateToProps = (state: IState, ownProps: any) => { // 'state' is the state in our Redux Store; 'ownProps' is a reference to this component's own this.props.
     return {
-        isLoggedIn: state.user.isLoggedIn,
     };
 };
 
 const mapDispatchToProps = (dispatch: any, ownProps: any) => {
     return {
-        authenticateUser: (userName: string, password: string) => {
-            dispatch(authenticateUserAction(userName, password));
+        logoutUser: () => {
+            dispatch(logoutUserAction());
         },
     };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginContainer));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LogoutContainer));

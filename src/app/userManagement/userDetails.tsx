@@ -2,6 +2,8 @@ import * as React from "react";
 
 import { IUser } from "../user";
 
+import LogoutContainer from "./logoutContainer";
+
 export interface IUserDetailsProps {
     user: IUser;
 }
@@ -16,7 +18,10 @@ export const UserDetails: React.SFC<IUserDetailsProps> = (props: IUserDetailsPro
                 </div>
                 <div>
                     Logged In: {props.user.isLoggedIn.toString()}
-                </div>                
+                </div>
+                <div>
+                    <LogoutContainer />
+                </div>
             </fieldset>
         </div>
     );

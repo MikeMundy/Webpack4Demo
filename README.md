@@ -148,9 +148,11 @@ add new widgets.
   - ... Right, what I'm gonna do is create a little React+Redux front end page with a login UI, and drag the feathers stuff into that.  
   - Created a couple of Login and Registration components inside the app component. Probably should seperate them into a user admin component
    with it's own redux connection. 
-  - Nearly working... issue with nested containers. 
-
-
+- Redux + Routing:
+  - https://redux.js.org/advanced/usagewithreactrouter
+  - https://reacttraining.com/react-router/web/guides/quick-start
+  - TypeScript notes: https://stackoverflow.com/questions/42309708/create-own-react-route-class-in-typescript 
+- I had better add in TS-LINT...
 
 
 - But first I'm adding in internationalization
@@ -158,9 +160,7 @@ add new widgets.
   - I'll try React-Intl. Supported by Yahoo.
   - npm install react-intl --save
   - Come back to that... app structure is a mess, need to arrange routing, redux provider properly first
-- Redux + Routing:
-  - https://redux.js.org/advanced/usagewithreactrouter
-  - 
+
 
 
 

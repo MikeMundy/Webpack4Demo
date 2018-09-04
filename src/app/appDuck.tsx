@@ -7,6 +7,7 @@ import { AnyAction, Reducer } from "redux";
 const USER_UPDATE = 'my-app/user/UPDATE';
 const USER_AUTHENTICATE = 'my-app/user/AUTHENTICATE';
 const USER_REGISTER = 'my-app/user/REGISTER';
+const USER_LOGOUT = 'my-app/user/LOGOUT';
 
 // Action Creators
 export function updateUserAction(user: IUser): AnyAction {
@@ -15,6 +16,10 @@ export function updateUserAction(user: IUser): AnyAction {
 
 export function authenticateUserAction(userName: string, password: string): AnyAction {
   return { type: USER_AUTHENTICATE, userName, password };
+}
+
+export function logoutUserAction(): AnyAction {
+  return { type: USER_LOGOUT };
 }
 
 export function registerUserAction(userName: string, password: string): AnyAction {
@@ -51,6 +56,15 @@ export default reducer = (state: IState = defaultState, action: AnyAction): ISta
       }
       return { ...state, user };
     }
+
+    case USER_LOGOUT: {
+      // Will need to do an ansych operation here...
+      const user: IUser = {
+        userName: "",
+        isLoggedIn: false,
+      }
+      return { ...state, user };
+    }    
 
     default: return state;
   }

@@ -1,26 +1,27 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
 
-import { IState } from "../state";
+import { IState } from "./state";
 
-import { UserDetails } from "./UserDetails";
+import { AppRouter } from "./AppRouter";
 
-class UserDetailsContainer extends React.Component<any, any> {
+class AppRouterContainer extends React.Component<any, any> {
 
     public constructor(props: any, context: any) {
+        console.log("AppRouter constructor");
         super(props, context);
     }
 
     public render() {
         return (
-            <UserDetails user={this.props.user} />
+            <AppRouter user={this.props.user}/>
         );
     }
 
 }
 
 const mapStateToProps = (state: IState, ownProps: any) => { // 'state' is the state in our Redux Store; 'ownProps' is a reference to this component's own this.props.
+    console.log("user in state:" + JSON.stringify(state.user));
     return {
         user: state.user,
     };
@@ -30,4 +31,4 @@ const mapDispatchToProps = (dispatch: any, ownProps: any) => {
     return {};
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserDetailsContainer));
+export default connect(mapStateToProps, mapDispatchToProps)(AppRouterContainer);

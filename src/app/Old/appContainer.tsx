@@ -2,13 +2,13 @@ import * as React from "react";
 import { connect } from "react-redux";
 
 import { IState } from "../state";
-// import { IUser } from "./user";
+// import { IUser } from "../user";
 
 // import { updateUserAction } from "./appDuck";
 
-import { App } from "../app";
+// import { App } from "../app";
 
-import { LoginContainer } from "../userManagement/loginContainer";
+import LoginContainer from "../userManagement/loginContainer";
 
 // export interface IWidgetContainerProps {
 //     widgets: IWidget[],
@@ -24,10 +24,10 @@ export class AppContainer extends React.Component<any, any> {
     public render() {
         return (
             <div>
-                <h1>App Container</h1>
+                <h1>App</h1>
                  user = {JSON.stringify(this.props.user)}                   
-                <App user={this.props.user} />
-                <h3>LoginContainer inside AppContainer</h3>
+                {/*<App />
+                <h3>LoginContainer inside AppContainer</h3>*/}
                 <LoginContainer />
             </div>
         );

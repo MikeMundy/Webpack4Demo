@@ -1,5 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 import { IState } from "../state";
 
@@ -7,7 +8,7 @@ import { registerUserAction } from "../appDuck";
 
 import { Register } from "./Register";
 
-export class RegisterContainer extends React.Component<any, any> {
+class RegisterContainer extends React.Component<any, any> {
 
     public constructor(props: any, context: any) {
         super(props, context);
@@ -33,4 +34,4 @@ const mapDispatchToProps = (dispatch: any) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RegisterContainer);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(RegisterContainer));

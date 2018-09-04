@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 
 import configureStore from "./store";
 
-import { App } from "./App";
+import AppRouterContainer from "./AppRouterContainer";
 
 export class AppProvider extends React.Component<any, any> {
 
@@ -17,7 +17,7 @@ export class AppProvider extends React.Component<any, any> {
     public render() {
         return (
             <Provider store={this.store}>
-                <App />
+                <AppRouterContainer />
             </Provider>
         )
     }
