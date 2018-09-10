@@ -1,0 +1,13 @@
+{
+  "extends": "tslint:latest",
+  "rules": {
+    "curly": true,
+    "max-line-length": false,
+    "class-name": false,
+    "variable-name": false,
+    "indent": false
+  },
+  "jsRules": {
+    "curly": true
+  }
+}
